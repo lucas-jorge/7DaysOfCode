@@ -6,7 +6,7 @@ Em seguida, o programa vai perguntar para você qual o valor que você deseja ch
 
 No fim, caso você não acerte nenhuma vez, ele vai imprimir qual era o número inicial.*/
 
-const prompt = require('prompt-sync')({sigint:true});
+const prompt = require('prompt-sync')({ sigint: true });
 
 const numero = Math.floor(Math.random() * 10);
 let tentativas = 3;
@@ -17,8 +17,13 @@ while (tentativas > 0) {
         console.log('Parabéns, você acertou!');
         break;
     } else {
-        console.log(`Você errou, você tem mais ${1- tentativas} tentativas restantes.`);
+        console.log(`Você errou, você tem mais ${tentativas - 1} tentativas restantes.`);
         --tentativas;
     }
+
+    if (tentativas === 0) {
+        console.log('Você não tem mais tentativas restantes.');
     }
-    console.log(`O número era ${numero}`);
+}
+
+console.log(`O número era ${numero}`);
