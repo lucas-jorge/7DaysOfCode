@@ -1,4 +1,6 @@
 // Inicializa a lista de compras vazia
+const prompt = require("prompt-sync")({ sigint: true});
+
 const listaDeCompras = [];
 
 function mostrarLista() {
