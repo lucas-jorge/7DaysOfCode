@@ -20,11 +20,11 @@ Lista de compras:
 const prompt = require('prompt-sync')({sigint:true});
 
 let lista = [];
-let resposta = prompt('Deseja adicionar uma comida na sua lista de compras? Responda com sim ou com nao. ');
+let resposta = prompt('Deseja adicionar um item na sua lista de compras? Responda com sim ou com nao. ');
 while (resposta == 'sim') {
-    const comida = prompt('Qual comida você deseja inserir? ');
-    const categoria = prompt('Em qual categoria essa comida se encaixa? ');
-    lista.push({comida, categoria});
+    const item = prompt('Qual item você deseja inserir? ');
+    const categoria = prompt('Em qual categoria essa item se encaixa? ');
+    lista.push({item, categoria});
     resposta = prompt('Deseja adicionar mais alguma coisa na sua lista de compras? Responda com sim ou com nao. ');
 } 
 console.log('Lista de compras: ');
@@ -32,18 +32,23 @@ let frutas = [];
 let laticinios = [];
 let congelados = [];
 let doces = [];
+let limpeza = [];
+
 for (let i = 0; i < lista.length; i++) {
     if (lista[i].categoria == 'frutas') {
-        frutas.push(lista[i].comida);
+        frutas.push(lista[i].item);
     } else if (lista[i].categoria == 'laticínios') {
-        laticinios.push(lista[i].comida);
+        laticinios.push(lista[i].item);
     } else if (lista[i].categoria == 'congelados') {
-        congelados.push(lista[i].comida);
+        congelados.push(lista[i].item);
     } else if (lista[i].categoria == 'doces') {
-        doces.push(lista[i].comida);
+        doces.push(lista[i].item);
+    } else if (lista[i].categoria == 'limpeza') {
+        limpeza.push(lista[i].item);
     }
 } 
 console.log(`Frutas: ${frutas}`);
 console.log(`Laticínios: ${laticinios}`);
 console.log(`Congelados: ${congelados}`);
 console.log(`Doces: ${doces}`);
+console.log(`Limpeza: ${limpeza}`);
